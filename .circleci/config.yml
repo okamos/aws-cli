@@ -6,6 +6,7 @@ jobs:
       - image: docker:19.03-git
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: Build image
           command: docker build -t aws-cli:${CIRCLE_SHA1} .
